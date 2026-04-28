@@ -9,3 +9,7 @@ paper_trading_*.csv
 __pycache__/
 *.pyc
 paper_trading_*.csv
+.venv/
+__pycache__/
+*.pyc
+paper_trading_*.csv

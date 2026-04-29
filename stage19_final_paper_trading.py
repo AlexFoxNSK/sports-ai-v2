@@ -163,7 +163,9 @@ def get_team_odds(xg_val, is_home=True):
 # ============================================================
 print("\n💵 PAPER TRADING")
 BANK_START = 10000
+STAKE_FIX = 200  # фиксированная ставка 200₽ (2% от начального)
 STAKE_PCT = 0.02
+MAX_STAKE_PCT = 0.02  # не более 2% от банка
 TB_THRESH = 0.75
 TM_THRESH = 0.35
 
@@ -172,7 +174,7 @@ bets_log = []
 stats = {'ou': 0, 'home_team': 0, 'away_team': 0, 'wins': 0, 'losses': 0}
 
 for i, (_, row) in enumerate(test.iterrows()):
-    stake = bank * STAKE_PCT
+    stake = STAKE_FIX
     total = row['total_goals']
 
     # === МОДЕЛЬ 1: OU 2.5 ===
